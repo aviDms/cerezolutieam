@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Ce rezolutie am?</title>
-        <meta name="description" content="content="Afișează instant rezoluția ecranului. Pentru ecrane sau monitoare PC, Mac, iPhone, Android.">
+        <title>Ce rezolutie are telefonul/monitorul meu?</title>
+        <meta name="description" content="content=" Afișează instant rezoluția ecranului telefonului sau a monitorului.
+            Pentru PC, Mac, iPhone, Android.">
         <meta name="keywords" content="rezolutie, ecran, monitor">
         <meta name="author" content="Avram Dames">
         <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -18,7 +19,6 @@
                 align-items: center;
                 justify-content: space-around;
                 height: 90vh;
-                line-height: 1.5;
             }
 
             .dark-mode {
@@ -26,13 +26,20 @@
                 color: #f8f8f8;
             }
 
-            .split-line {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            h1 {
+                font-size: 1rem;
+                font-weight: normal;
             }
 
-            .center-line {
+            header {
+                text-align: center;
+            }
+
+            header p {
+                font-size: 1.618rem;
+            }
+
+            footer p {
                 display: flex;
                 opacity: 70%;
             }
@@ -40,10 +47,12 @@
             #heart-icon {
                 height: 1.2rem;
                 width: 2rem;
+                padding-bottom: 0.3rem;
+                box-sizing: border-box;
             }
 
             @media only screen and (max-width: 600px) {
-                .center-line {
+                footer p {
                     flex-direction: column;
                     align-items: center;
                 }
@@ -57,32 +66,31 @@
                     padding-bottom: 1rem;
                 }
             }
-
-            #resolution {
-                font-size: 2rem;
-            }
         </style>
     </head>
 
     <body>
         <!-- Main -->
-        <div class="split-line">
-            Rezoluția ecranului tău este:
-            <span id="resolution"></span>
-        </div>
+        <header>
+            <h1>Rezoluția ecranului tău este:</h1>
+            <p id="show-resolution-here"></p>
+        </header>
 
         <!-- Terms -->
-        <p class="center-line">
-            <svg id="heart-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-            Acest website nu se folosește de cookie-uri sau date personale.
-        </p>
+        <footer>
+            <p>
+                <svg id="heart-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                Acest website nu folosește cookie-uri sau date personale.
+            </p>
+        </footer>
 
         <!-- Update DOM -->
         <script>
-            const parentUL = document.querySelector('#resolution');
+            const parentUL = document.querySelector('#show-resolution-here');
             parentUL.innerHTML = screen.width + "x" + screen.height;
         </script>
         <script>
