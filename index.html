@@ -73,7 +73,7 @@
     <body>
         <!-- Main -->
         <header>
-            <h1>Rezoluția ecranului tău este:</h1>
+            <h1>Rezoluția ecranului (în pixeli)</h1>
             <p id="show-resolution-here"></p>
         </header>
 
@@ -92,7 +92,7 @@
         <!-- Update DOM -->
         <script>
             const parentUL = document.querySelector('#show-resolution-here');
-            parentUL.innerHTML = screen.width + "x" + screen.height + " px";
+            parentUL.innerHTML = screen.width + " x " + screen.height;
         </script>
         <script>
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
